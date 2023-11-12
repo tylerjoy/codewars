@@ -1,0 +1,1 @@
+const neutralise = (s1, s2) => s1.split('').map((e, i) => e === s2[i] ? e : '0').join('')
