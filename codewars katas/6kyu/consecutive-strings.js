@@ -1,16 +1,17 @@
 function longestConsec(strarr, k) {
+  const n = strarr.length
   
-  if(strarr.length === 0 || k > strarr.length || k < 0){
-    return ""
+  if(n === 0 || k > n || k <= 0){
+    return ''
   }
-  
-  slicedArr = strarr.map( (e, i, a)=> a.slice(i, i + k).join('') )
-  
-  sortedArr = slicedArr.sort((a, b)=> {
-    return a.length - b.length
-  })
-  
-  console.log(sortedArr)
-  return sortedArr.slice(-1).join()
 
+longestString = ''
+
+for( i = 0; i <= n - k; i++ ){
+  currentString = strarr.slice(i, i + k).join('')
+  if(currentString.length > longestString.length){
+    longestString = currentString
+  }
+}
+return longestString
 }
